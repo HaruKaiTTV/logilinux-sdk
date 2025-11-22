@@ -2,11 +2,12 @@
 # Helper script to run Python with the correct library path and permissions
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-export LD_LIBRARY_PATH="$SCRIPT_DIR/logilinux-driver/build/lib:$LD_LIBRARY_PATH"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+export LD_LIBRARY_PATH="$PROJECT_ROOT/logilinux-driver/build/lib:$LD_LIBRARY_PATH"
 
 # Use venv python if available, otherwise system python
-if [ -f "$SCRIPT_DIR/venv/bin/python" ]; then
-    PYTHON="$SCRIPT_DIR/venv/bin/python"
+if [ -f "$PROJECT_ROOT/venv/bin/python" ]; then
+    PYTHON="$PROJECT_ROOT/venv/bin/python"
 else
     PYTHON="python"
 fi
