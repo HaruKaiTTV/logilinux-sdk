@@ -1,0 +1,3 @@
+[submodule "logilinux-driver"]
+	path = logilinux-driver
+	url = https://github.com/ron0studios/LogiLinux
